@@ -10,6 +10,10 @@
     "next": "^14.2.3",
     "react": "^18.3.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muharrem-yildirim/next-favicon-notification.git"
+  },
   "devDependencies": {
     "@types/react": "^18.3.1"
   }
