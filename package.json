@@ -1,7 +1,7 @@
 {
   "name": "next-favicon-notification",
-  "version": "1.0.0",
-  "description": "Favicion notifications for Next.js",
+  "version": "1.0.2",
+  "description": "Favicon notifications for Next.js",
   "main": "index.ts",
   "scripts": {},
   "author": "Muharrem YILDIRIM",
@@ -16,5 +16,14 @@
   },
   "devDependencies": {
     "@types/react": "^18.3.1"
-  }
+  },
+  "keywords": [
+    "next",
+    "nextjs",
+    "react",
+    "notification",
+    "favicon",
+    "icon",
+    "next-favicon-notification"
+  ]
 }
