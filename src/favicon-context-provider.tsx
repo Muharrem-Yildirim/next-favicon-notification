@@ -48,7 +48,7 @@ const FaviconNotificationContextProvider = ({ children }) => {
         drawText(ctx, POS_X, POS_Y);
       }
 
-      if (canvas) {
+      if (canvas && oldLink) {
         oldLink.href = canvas.toDataURL();
       }
     };
