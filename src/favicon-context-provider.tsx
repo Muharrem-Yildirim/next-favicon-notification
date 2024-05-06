@@ -15,7 +15,7 @@ const initialConfig = {
 
 const FaviconContextNotification = createContext({});
 
-const FaviconNotificationContextProvider = ({ children }) => {
+const FaviconNotificationContextProvider = ({ children }: any) => {
   const [config, setConfig] = useState(initialConfig);
 
   const changeFavicon = () => {
@@ -31,11 +31,11 @@ const FaviconNotificationContextProvider = ({ children }) => {
       var oldLink =
         document.querySelector<HTMLLinkElement>("link[rel~='icon']");
 
-      var canvas = document.createElement("canvas");
+      var canvas: HTMLCanvasElement = document.createElement("canvas");
       canvas.width = favicon.width;
       canvas.height = favicon.height;
 
-      var ctx = canvas.getContext("2d");
+      var ctx: CanvasRenderingContext2D = canvas.getContext("2d")!;
       ctx.drawImage(favicon, 0, 0);
 
       const [POS_X, POS_Y] = getPosition(config.position, canvas);
@@ -60,7 +60,7 @@ const FaviconNotificationContextProvider = ({ children }) => {
     if (link && config.url) link.href = config.url;
   };
 
-  const getPosition = (positionLabel, canvas) => {
+  const getPosition = (positionLabel: string, canvas: HTMLCanvasElement) => {
     var positionX = 0;
     var positionY = 0;
     switch (positionLabel) {
@@ -93,7 +93,11 @@ const FaviconNotificationContextProvider = ({ children }) => {
     return [positionX, positionY];
   };
 
-  const drawCircle = (ctx, positionX, positionY) => {
+  const drawCircle = (
+    ctx: CanvasRenderingContext2D,
+    positionX: number,
+    positionY: number
+  ) => {
     ctx.beginPath();
     ctx.arc(positionX, positionY, config.radius, 0, 2 * Math.PI, false);
     ctx.fillStyle = config.backgroundColor;
@@ -102,7 +106,11 @@ const FaviconNotificationContextProvider = ({ children }) => {
     ctx.closePath();
   };
 
-  const drawInnerCircle = (ctx, positionX, positionY) => {
+  const drawInnerCircle = (
+    ctx: CanvasRenderingContext2D,
+    positionX: number,
+    positionY: number
+  ) => {
     ctx.beginPath();
     ctx.arc(positionX, positionY, config.radius / 2, 0, 2 * Math.PI, false);
     ctx.fillStyle = config.fontColor;
@@ -112,7 +120,11 @@ const FaviconNotificationContextProvider = ({ children }) => {
     ctx.closePath();
   };
 
-  const drawText = (ctx, positionX, positionY) => {
+  const drawText = (
+    ctx: CanvasRenderingContext2D,
+    positionX: number,
+    positionY: number
+  ) => {
     if (config.counter > 9 || config.innerCircle) {
       drawInnerCircle(ctx, positionX, positionY);
       return;

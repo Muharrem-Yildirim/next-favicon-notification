@@ -1,21 +1,30 @@
 {
   "name": "next-favicon-notification",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Favicon notifications for Next.js",
-  "main": "index.ts",
-  "scripts": {},
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup ./index.ts"
+  },
   "author": "Muharrem YILDIRIM",
   "license": "ISC",
   "dependencies": {
     "next": "^14.2.3",
-    "react": "^18.3.1"
+    "react": "^18.3.1",
+    "typescript": "^5.4.5"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/muharrem-yildirim/next-favicon-notification.git"
   },
   "devDependencies": {
-    "@types/react": "^18.3.1"
+    "@types/react": "^18.3.1",
+    "tsup": "^8.0.2"
   },
   "keywords": [
     "next",
